@@ -9,7 +9,7 @@ getting specific input files.
 '''
 
 annotationdictionary = defaultdict(list)
-f = open('/home/adam/coco/annotation2017/annotations/instances_train2017.json', encoding='utf-8')
+f = open('/home/zhang/coco/annotation2017/annotations/instances_train2017.json', encoding='utf-8')
 coco_data = json.load(f)
 
 coco_annot = coco_data['annotations']
@@ -17,7 +17,7 @@ for each_ant in coco_annot:
     # Read each annotation and reorcognize them into images size.
     image_id = each_ant['image_id']
     image_plus_prefix = (12 - len(str(image_id)))*'0' + str(image_id)
-    img_location = img = '/home/adam/coco/coco2017train/train2017/%s.jpg' % image_plus_prefix
+    img_location = img = '/home/zhang/coco/train2017/%s.jpg' % image_plus_prefix
     bbox = each_ant['bbox']
     class_belong = each_ant['category_id']
 
